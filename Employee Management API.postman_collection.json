@@ -1,49 +1,12 @@
 {
 	"info": {
-		"_postman_id": "3d6b6622-c57d-4685-a2ee-cbe6ee7f3d43",
+		"_postman_id": "f7e82ac4-2083-4afd-9447-0265665b8dc1",
 		"name": "Employee Management API",
 		"description": "API collection for managing employees",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "4468909"
 	},
 	"item": [
-		{
-			"name": "Login Employee",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/x-www-form-urlencoded"
-					}
-				],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "username",
-							"value": "rahul.kumar@example.in"
-						},
-						{
-							"key": "password",
-							"value": "rahul123"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:8080/login",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"login"
-					]
-				}
-			},
-			"response": []
-		},
 		{
 			"name": "Register Employee",
 			"request": {
@@ -189,6 +152,34 @@
 							"key": "id",
 							"value": "1"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"dipak.more@gmail.com\",\r\n    \"password\":\"dipak123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
 					]
 				}
 			},
