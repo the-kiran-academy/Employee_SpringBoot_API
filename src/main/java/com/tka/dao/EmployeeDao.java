@@ -38,7 +38,7 @@ public class EmployeeDao {
 	
 	public Employee login(String email, String password) {
 		try (Session session = sf.openSession()) {
-			return session.createQuery("FROM Employee WHERE u = :email AND password = :password", Employee.class)
+			return session.createQuery("FROM Employee WHERE email = :email AND password = :password", Employee.class)
 					.setParameter("email", email).setParameter("password", password).uniqueResult();
 		}
 	}
