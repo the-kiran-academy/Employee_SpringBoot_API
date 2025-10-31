@@ -1,17 +1,20 @@
-# Use official Java 17 image
+# Use Java 17 base image
 FROM eclipse-temurin:17-jdk-jammy
 
-# Set workdir
+# Set working directory
 WORKDIR /app
 
-# Copy project
+# Copy all files
 COPY . .
 
-# Build app
+# ✅ Give execute permission to mvnw
+RUN chmod +x mvnw
+
+# Build the app
 RUN ./mvnw -B clean package -DskipTests
 
 # Expose port 8080
 EXPOSE 8080
 
-# Run the app
-CMD ["java", "-jar", "target/Employee_CRUD-0.0.1-SNAPSHOT.jar"]
+# Run the jar
+CMD ["java", "-jar", "target/*.jar"]
